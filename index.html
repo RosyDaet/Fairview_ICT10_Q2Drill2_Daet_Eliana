@@ -1,16 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Add Members</title>
+
+    <!-- PyScript -->
     <link rel="stylesheet"
           href="https://pyscript.net/releases/2026.7.3/core.css">
     <script type="module"
             src="https://pyscript.net/releases/2026.7.3/core.js"></script>
 
-    <title>Add Members </title>
-
+    <!-- CSS Styling -->
     <style>
         body {
             min-height: 100vh;
@@ -96,8 +99,10 @@
 <body>
     <div class="members">
 
+        <!-- Page Title -->
         <h1>ICT Members Verification</h1>
 
+        <!-- Member Input Form -->
         <div class="Club_members">
 
             <label for="first_name">Enter First Name</label>
@@ -118,10 +123,12 @@
 
         </div>
 
-        <button py-click="check_member">
-            Results
+        <!-- Add Member Button -->
+        <button py-click="check_members">
+            Add New Member
         </button>
 
+        <!-- Club Member List -->
         <h1>Club List</h1>
 
         <div id="List">
@@ -130,6 +137,7 @@
 
     </div>
 
+    <!-- Load Python File -->
     <script type="py" src="main.py"></script>
 </body>
 </html>
