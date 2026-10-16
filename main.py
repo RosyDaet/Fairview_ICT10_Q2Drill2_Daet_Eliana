@@ -1,45 +1,59 @@
+from pyscript import document
 
-from pyscript import document, display
+# List of ICT club members
+club_members = [
+    "Francis Fernandez",
+    "Gavin Ruiz",
+    "Edrian Correa",
+    "Philip Ponce",
+    "Julian Anaque",
+    "Andrik David",
+    "Alexander Floro",
+    "Annika De Vera",
+    "Eliana Daet",
+    "Anthony Aggarao",
+    "Nico Crispino",
+    "Janna Planas",
+    "Khiane Herrera",
+    "Algena Cabling",
+    "Alexei Janayan",
+    "Vihaan Master",
+    "Sebastian Fernandez",
+    "Peter Reyes",
+    "Julian Ante",
+    "Kendra Saludar"  
+]
 
-# Mutable set
-color = {"green", "yellow", "pink", "blue", "pink", "PINK"}
-color.add("gravy")
-display(color, target="output1")
 
-# Set containing different data types
-my_set = {1, 1.15, "number"}
-display(my_set, target="output1")
+def check_member(event):
+     # formula used to get the first name and last name 
+    first_name = document.querySelector("#first_name").value.strip()
+    last_name = document.querySelector("#last_name").value.strip()
 
-# Union
-set1 = {"apple", "banana", "cherry"}
-set2 = {"pineapple", "banana", "melon", "watermelon"}
+    # Get the first name and last name from the input fields
+    full_name = first_name + " " + last_name
 
-display(set1 | set2, target="output1")
-display(set1.union(set2), target="output1")
+   #checks if either name field is empty
+    if not first_name or not last_name:
+        document.querySelector("#List").innerText = (
+            "Please enter both your first name and last name."
+        )
+        return
 
-# Intersection
-Iset = {"apple", "banana", "cherry"}
-Iset2 = {"pineapple", "banana", "melon", "watermelon"}
+    is_member = full_name.casefold() in [
+        member.casefold() for member in club_members
+    ]
+    # Chekcks if full name matches a club member
+    if is_member:
+        message = (
+            f"Congratulations, {full_name}! "
+            "You are part of the ICT Club."
+        )
+   # display of message if the person is not club member
+    else:
+        message = (
+            f"Sorry, {full_name}. "
+            "Your name is not on the club list."
+        )
 
-display(Iset & Iset2, target="output1")
-display(Iset.intersection(Iset2), target="output1")
-
-# Difference
-display(Iset - Iset2, target="output1")
-display(Iset2 - Iset, target="output1")
-display(Iset.difference(Iset2), target="output1")
-
-# Symmetric difference
-display(Iset ^ Iset2, target="output1")
-display(Iset.symmetric_difference(Iset2), target="output1")
-
-# Subset
-A = {"burger", "fries"}
-B = {"burger", "fries", "coke", "pie"}
-
-display(A < B, target="output1")
-display(A.issubset(B), target="output1")
-
-# Superset
-display(B >= A, target="output1")
-display(B.issuperset(A), target="output1")
+    document.querySelector("#List").innerText = message
