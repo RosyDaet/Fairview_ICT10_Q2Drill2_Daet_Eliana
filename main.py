@@ -19,11 +19,12 @@ club_members = [
     "Alexei Janayan",
     "Vihaan Master",
     "Sebastian Fernandez",
-    "Peter Reyes",
+    "Peter Reyes",s
     "Julian Ante",
     "Kendra Saludar"  
 ]
 
+(sort ) = []
 
 def check_member(event):
      # formula used to get the first name and last name 
@@ -40,20 +41,3 @@ def check_member(event):
         )
         return
 
-    is_member = full_name.casefold() in [
-        member.casefold() for member in club_members
-    ]
-    # Chekcks if full name matches a club member
-    if is_member:
-        message = (
-            f"Congratulations, {full_name}! "
-            "You are part of the ICT Club."
-        )
-   # display of message if the person is not club member
-    else:
-        message = (
-            f"Sorry, {full_name}. "
-            "Your name is not on the club list."
-        )
-
-    document.querySelector("#List").innerText = message
