@@ -3,17 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script><title>ICT 10</title>
+
+    <link rel="stylesheet"
+          href="https://pyscript.net/releases/2026.7.3/core.css">
+    <script type="module"
+            src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <title>ICT Club Members Verification</title>
+
     <style>
-        body{text-align: center;}
-        h1{color: rgb(4, 50, 136);}
-        #output1{border: 5px solid rgb(17, 20, 193);box-shadow: 0px 5px 5px rgb(200, 200, 200); height: 500px;border-radius: 10px;font-size: 20px;}
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background-image: url("https://img.magnific.com/free-vector/neon-circuit-board-wallpaper_23-2148344069.jpg?semt=ais_hybrid&w=740&q=80");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+
+        .members {
+            width: 90%;
+            max-width: 750px;
+            margin: 30px auto;
+            background: rgba(0, 0, 128, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            border: 1px solid #3399FF;
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.5);
+        }
+
+        .members h1 {
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .members h1:first-child {
+            color: white;
+            background: rgba(0, 0, 128, 0.9);
+        }
+
+        .Club_members {
+            padding: 25px;
+        }
+
+        .Club_members label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .Club_members input {
+            box-sizing: border-box;
+            width: 100%;
+            margin-top: 8px;
+            padding: 12px;
+            border: 1px solid #3399FF;
+            border-radius: 6px;
+            background-color: #f0f8ff;
+            color: #000080;
+        }
+
+        button {
+            width: 90%;
+            margin: 20px 5%;
+            padding: 15px;
+            border: 0;
+            border-radius: 6px;
+            color: white;
+            background: #3399FF;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #007BFF;
+        }
+
+        #List {
+            padding: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
     </style>
 </head>
+
 <body>
-    <h1>working of sets </h1>
-    <div id="output1"></div>
+    <div class="members">
+
+        <h1>ICT Members Verification</h1>
+
+        <div class="Club_members">
+
+            <label for="first_name">Enter First Name</label>
+            <input
+                type="text"
+                id="first_name"
+                placeholder="Example: Eliana"
+                required
+            >
+
+            <label for="last_name">Enter Last Name</label>
+            <input
+                type="text"
+                id="last_name"
+                placeholder="Example: Daet"
+                required
+            >
+
+        </div>
+
+        <button py-click="check_member">
+            Results
+        </button>
+
+        <h1>Club List</h1>
+
+        <div id="List">
+            Your result will appear here.
+        </div>
+
+    </div>
+
     <script type="py" src="main.py"></script>
 </body>
 </html>
