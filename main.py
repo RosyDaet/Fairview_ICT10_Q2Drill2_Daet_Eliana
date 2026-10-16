@@ -19,13 +19,21 @@ club_members = [
     "Alexei Janayan",
     "Vihaan Master",
     "Sebastian Fernandez",
-    "Peter Reyes",s
+    "Peter Reyes",
     "Julian Ante",
     "Kendra Saludar"  
 ]
 
-(sort ) = []
+grade_7 = []
 
+grade_8 = []
+
+grade_9 = []
+
+grade_10 =
+
+
+full_name.(add) =  
 def check_member(event):
      # formula used to get the first name and last name 
     first_name = document.querySelector("#first_name").value.strip()
