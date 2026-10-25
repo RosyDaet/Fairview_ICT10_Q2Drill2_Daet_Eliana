@@ -29,4 +29,4 @@ def check_members(event):
     message = f"ALL MEMBERS:\n{chr(10).join(sorted(fullmembers))}\nTOTAL MEMBERS: {len(fullmembers)}"
 
     # Display the results
-    document.querySelector("#List").innerText = message
+    document.getElementById("List").innerHTML = message
